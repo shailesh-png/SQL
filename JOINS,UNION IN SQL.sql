@@ -57,9 +57,6 @@ ON CUSTOMER1.CID=ORDER1.CID;
 /* Returns all customers from CUSTOMER1.
 If a customer has placed an order (i.e. there’s a matching CID in ORDER1), their OID (Order ID) is shown
 If a customer has not placed an order, the OID will be NULL
-
-Alice appears twice because she has two orders.
-Charlie appears with NULL because he has no orders.
 */
 
 CREATE TABLE EMPLOYEE1
@@ -82,9 +79,6 @@ ON ORDER1.EID=EMPLOYEE1.EID;
 /* Returns all employees from EMPLOYEE1.
 If an employee has handled orders, the order's OID appears.
 If an employee has not handled any orders, OID will be NULL.
-
-Alice and Bob appear with their handled orders.
-Charlie appears with NULL for OID because he hasn't handled any orders.
 */
 
 SELECT EMPLOYEE1.ENAME , ORDER1.OID
@@ -95,7 +89,7 @@ ON EMPLOYEE1.EID=ORDER1.EID;
   it shows the employee name (ENAME)
   and the order ID (OID)
 Shows all employees, even if they did not handle any orders
-Charlie appears with NULL because he hasn't handled any orders
+emplyees appear with null that means they arent handle any order
 */
 
 SELECT ORDER1.OID , CUSTOMER1.CNAME, CUSTOMER1.AREA
@@ -129,7 +123,7 @@ SELECT ORDER1.OID, CUSTOMER1.CNAME
 FROM ORDER1
 RIGHT JOIN CUSTOMER1
 ON ORDER1.CID=CUSTOMER1.CID;
-/**/
+#--------------------------------------------------------------------------------------------------
 select * from customer1;
 
 
